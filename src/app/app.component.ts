@@ -4,7 +4,7 @@ import { EncuestasComponent } from "./components/encuestas/encuestas.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, EncuestasComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
