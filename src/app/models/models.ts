@@ -1,52 +1,53 @@
-// Encuesta
-export interface PostEncuestaDto {
-    titulo: string;
-    preguntas: PostPreguntaDto[];
-}
-
-export interface GetEncuestaItemDto {
+// Consulta encuesta para listado
+export interface EncuestaDto {
     id: number;
     titulo: string;
     cantidadPreguntas: number;
     cantidadRespuestas: number;
 }
 
-export interface GetEncuestaDto {
+
+//Obtener encuesta con preguntas
+export interface EncuestaDetalleDto {
     id: number;
     titulo: string;
-    preguntas: GetPreguntaDto[];
+    preguntas: PreguntaDTO[];
 }
-
-
-//Pregunta
-export interface GetPreguntaDto {
+export interface PreguntaDTO {
     id: number;
     contenido: string;
 }
 
-export interface PostPreguntaDto {
+
+//Crear encuesta
+export interface NuevaEncuestaDTO {
+    titulo: string;
+    preguntas: NuevaPreguntaDTO[];
+}
+export interface NuevaPreguntaDTO {
     contenido: string;
 }
 
 
-//Respuesta
-export interface PostRespuestaDto {
-    encuestaId: number;
-    respuestas: PostRespuestaItemDto[];
-}
 
-export interface PostRespuestaItemDto {
+//Responder encuesta
+export interface NuevaRespuestaDTO {
+    encuestaId: number;
+    respuestas: RespuestaIndividualDTO[];
+}
+export interface RespuestaIndividualDTO {
     preguntaId: number;
     contenido: string;
 }
 
-export interface GetEstadisticaDto {
+
+//Encuesta con estadísticas
+export interface EstadisticasEncuestaDTO {
     encuestaId: number;
     tituloEncuesta: string;
-    estadisticasPreguntas: GetEstadisticaItemDto[];
+    estadisticasPreguntas: EstadisticaPreguntaDTO[];
 }
-
-export interface GetEstadisticaItemDto {
+export interface EstadisticaPreguntaDTO {
     preguntaId: number;
     contenidoPregunta: string;
     cantidadTotalRespuestas: number;

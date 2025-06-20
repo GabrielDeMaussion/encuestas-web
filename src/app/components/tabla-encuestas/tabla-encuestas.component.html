@@ -1,0 +1,29 @@
+<table class="w-full rounded-2xl overflow-hidden">
+    <thead class="bg-indigo-600 text-white">
+        <tr>
+            <th class="py-3 px-4 text-left">Titulo</th>
+            <th class="py-3 px-4 text-right">Cantidad de preguntas</th>
+            <th class="py-3 px-4 text-right">Cantidad de respuestas</th>
+            <th class="py-3 px-4 text-center">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (encuesta of encuestas; track $index) {
+        <tr class="border-gray-200 bg-gray-100 hover:bg-gray-50 transition-colors border-2">
+            <td class="py-2 px-4 text-left">{{ encuesta.titulo }}</td>
+            <td class="py-2 px-4 text-right">{{ encuesta.cantidadPreguntas }}</td>
+            <td class="py-2 px-4 text-right">{{ encuesta.cantidadRespuestas }}</td>
+            <td class="py-2 px-4 text-center flex justify-center gap-2">
+                <button class="bg-green-700 hover:bg-green-600 font-bold px-3 py-2 rounded text-gray-50 transition-all"
+                    (click)="responder.emit(encuesta.id)">
+                    Responder
+                </button>
+                <button class="bg-blue-700 hover:bg-blue-600 font-bold px-3 py-2 rounded text-gray-50 transition-all"
+                    (click)="estadisticas.emit(encuesta.id)">
+                    Estadisticas
+                </button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

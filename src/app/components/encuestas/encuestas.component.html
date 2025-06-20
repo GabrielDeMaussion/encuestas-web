@@ -1,0 +1,4 @@
+<section class="container mx-auto p-6">
+    <h2 class="text-indigo-600 text-3xl font-bold mb-4">Listado de Encuestas</h2>
+    <app-tabla-encuestas [encuestas]="encuestas" (responder)="responderEncuesta($event)" (estadisticas)="estadisticasEncuesta($event)"></app-tabla-encuestas>
+</section>

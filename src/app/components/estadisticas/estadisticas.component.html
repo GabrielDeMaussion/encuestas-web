@@ -1,0 +1,10 @@
+<section class="container mx-auto p-6">
+    <div class="flex justify-between mb-4">
+        <h1 class="text-3xl font-bold text-indigo-600">{{ estadisticas?.tituloEncuesta }}</h1>
+        <a class="bg-indigo-600 hover:bg-indigo-400 font-bold px-3 py-2 rounded text-gray-50 transition-all" [routerLink]="['/encuestas']" routerLinkActive="router-link-active" >Volver</a>
+    </div>
+
+    @for (pregunta of estadisticas?.estadisticasPreguntas; track $index) {
+    <app-estadistica-pregunta [pregunta]="pregunta"></app-estadistica-pregunta>
+    }
+</section>
